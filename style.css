@@ -377,11 +377,11 @@ body {
           animation: transitionInFade 2s ease;
   font-weight: 700;
 }
-/* @media (max-width: 900px) {
+@media (max-width: 768px) {
 	.Sidebar .logout {
-		margin: 0 auto;
+		margin-bottom: 30%;
 	}
-} */
+}
 
 @-webkit-keyframes transitionInFade {
   0% {
@@ -1169,7 +1169,7 @@ body {
   max-height: 650px;
   padding: 0 10px 0 0;
 }
-@media (min-width: 768px){
+@media (min-width: 769px){
 	.Dashboard .modal .Table tbody {
 		overflow-y:scroll;
 	}
