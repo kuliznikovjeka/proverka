@@ -102,82 +102,88 @@
 				<h1 class="title">Управление сетками</h1>
 				<button onclick="closeModal('manage')" class="close-button"></button>
 			</div>
-			<div class="Table-header container row">
-				<div class="Table-group container row">
-					<div class="Table-group__column">
-						<div class="status">Статус</div>
+			<div class="manage__custom-row">
+				<div class="Table-header container row">
+					<div class="Table-group container row">
+						<div class="Table-group__column">
+							<div class="status">Статус</div>
+						</div>
+						<div class="Table-group__column">
+							<div class="name">Игра</div>
+						</div>
+						<div class="Table-group__column">
+							<div class="date">Дата</div>
+						</div>
+						<div class="Table-group__column">
+							<div class="tour">Турнир</div>
+						</div>
 					</div>
-					<div class="Table-group__column">
-						<div class="name">Игра</div>
-					</div>
-					<div class="Table-group__column">
-						<div class="date">Дата</div>
-					</div>
-					<div class="Table-group__column">
-						<div class="tour">Турнир</div>
+					<div class="Table-group container row">
+						<div class="buttons">Управление</div>
 					</div>
 				</div>
-				<div class="Table-group container row">
-					<div class="buttons">Управление</div>
-				</div>
-			</div>
-			<table class="Table">
-				<tbody id="list_tour">
-					<tr id="tour_1" idx="1">
-						<td class="active">Активен</td>
-						<td class="name">TEST 1</td>
-						<td>12.03.2023</td>
-						<td class="tour">A TEST</td>
-						<td class="container row">
-							<div class="table-button delete"></div>
-							<div class="table-button edit"></div>
-							<div class="table-button copy"><input id="url_1"
-									style="position: absolute; left: -1000px; top: -1000px;" type="text" value="https://test.ru">
-							</div>
-						</td>
-					</tr>
-					<tr id="tour_2" idx="2">
-						<td class="active">Активен</td>
-						<td class="name">TEST 2</td>
-						<td>12.03.2024</td>
-						<td class="tour">D TEST</td>
-						<td class="container row">
-							<div class="table-button delete"></div>
-							<div class="table-button edit"></div>
-							<div class="table-button copy"><input id="url_2"
-									style="position: absolute; left: -1000px; top: -1000px;" type="text" value="https://test.ru">
-							</div>
-						</td>
-					</tr>
-					<tr id="tour_3" idx="3">
-						<td class="ended">Завершен</td>
-						<td class="name">A TEST</td>
-						<td>15.03.2022</td>
-						<td class="tour">TEST TEST 3</td>
-						<td class="container row">
-							<div class="table-button delete"></div>
-							<div class="table-button edit"></div>
-							<div class="table-button copy"><input id="url_3"
-									style="position: absolute; left: -1000px; top: -1000px;" type="text" value="https://test.ru">
-							</div>
-						</td>
-					</tr>
-					<tr id="tour_4" idx="4">
-						<td class="active">Активен</td>
-						<td class="name">A TEST</td>
-						<td>18.05.2023</td>
-						<td class="tour">TEST TEST 4</td>
-						<td class="container row">
-							<div class="table-button delete"></div>
-							<div class="table-button edit"></div>
-							<div class="table-button copy"><input id="url_4"
-									style="position: absolute; left: -1000px; top: -1000px;" type="text" value="https://test.ru">
-							</div>
-						</td>
-					</tr>
+				<table class="Table">
+					<tbody id="list_tour">
+						<tr id="tour_1" idx="1">
+							<td class="active">Активен</td>
+							<td class="name">TEST 1</td>
+							<td>12.03.2023</td>
+							<td class="tour">A TEST</td>
+							<td class="container row">
+								<div class="table-button delete"></div>
+								<div class="table-button edit"></div>
+								<div class="table-button copy"><input id="url_1"
+										style="position: absolute; left: -1000px; top: -1000px;" type="text"
+										value="https://test.ru">
+								</div>
+							</td>
+						</tr>
+						<tr id="tour_2" idx="2">
+							<td class="active">Активен</td>
+							<td class="name">TEST 2</td>
+							<td>12.03.2024</td>
+							<td class="tour">D TEST</td>
+							<td class="container row">
+								<div class="table-button delete"></div>
+								<div class="table-button edit"></div>
+								<div class="table-button copy"><input id="url_2"
+										style="position: absolute; left: -1000px; top: -1000px;" type="text"
+										value="https://test.ru">
+								</div>
+							</td>
+						</tr>
+						<tr id="tour_3" idx="3">
+							<td class="ended">Завершен</td>
+							<td class="name">A TEST</td>
+							<td>15.03.2022</td>
+							<td class="tour">TEST TEST 3</td>
+							<td class="container row">
+								<div class="table-button delete"></div>
+								<div class="table-button edit"></div>
+								<div class="table-button copy"><input id="url_3"
+										style="position: absolute; left: -1000px; top: -1000px;" type="text"
+										value="https://test.ru">
+								</div>
+							</td>
+						</tr>
+						<tr id="tour_4" idx="4">
+							<td class="active">Активен</td>
+							<td class="name">A TEST</td>
+							<td>18.05.2023</td>
+							<td class="tour">TEST TEST 4</td>
+							<td class="container row">
+								<div class="table-button delete"></div>
+								<div class="table-button edit"></div>
+								<div class="table-button copy"><input id="url_4"
+										style="position: absolute; left: -1000px; top: -1000px;" type="text"
+										value="https://test.ru">
+								</div>
+							</td>
+						</tr>
 
-				</tbody>
-			</table>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<div class="modal delete-prompt">
 			<div class="delete-prompt-text"></div>
