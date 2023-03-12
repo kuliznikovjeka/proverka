@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <!script src="/js/engine.js"></script-->
+ </head>
+ <body>
+  <main class="Login">
+   <div class="Login-container">
+    <img src="./images/logo_frakcium.svg" alt="Frakcium logo" class="logo">
+    <form id="form_login" class="Login-form">
+     <div class="wrapper text">
+      <input type="text" placeholder="Ваш логин" name="login" maxlength="20"  required>
+     </div>
+     <div class="wrapper password">
+      <input type="password" placeholder="Пароль" name="password" maxlength="30"  required>
+      <div class="show-pass-btn" onmousedown="togglePassword()"></div>         
+     </div>
+     <div class="wrapper submit">
+      <input class="ajax-link" type="submit" value="Войти" data-form="#form_login">
+     </div>
+    </form>
+   </div>
+   <img class="decor" src="./images/decor_1.svg" alt="">
+   <img class="decor" src="./images/decor_1.svg" alt="">
+  </main>
+  <div class="loader">
+   <div class="loader-text">Входим...</div>         
+  </div>
+ </body>
+</html>
+
+<script>
+	let show = false;
+	function togglePassword() {
+		if (show) {
+			$('.show-pass-btn').on('click', () => $('.password > input').attr('type', 'password'));
+			show = false;
+		}
+		else {
+			$('.show-pass-btn').on('click', () => $('.password > input').attr('type', 'text'));
+			show = true; 
+		}
+	}
+
+	$('.submit > input').on('click', event => {
+		event.preventDefault();
+		$('.loader').css('display', 'flex');
+		$('.Login *').css('filter', 'blur(5px)');
+		setTimeout(() => {	// simulate fetch time
+			if (true) {		// if validation successfull
+				$('.decor').last().animate({'margin-top': '-1000px'}, 1500);
+				$('.decor').first().animate({'margin-bottom': '-1000px'}, 1500);
+				$('.Login-container').animate({'margin-top': '-1000px'}, 1000, () => redirect());
+			}
+		}, 1000);
+	});
+
+	function redirect() { window.parent.location.href = 'index.html'; }
+</script>

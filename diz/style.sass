@@ -1,0 +1,613 @@
+@import reset
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap')
+
+$bounce: ease //cubic-bezier(.64,.57,.59,1.11)
+
+$red: #C42121
+$grey: #B7B7B7
+$white: #fff
+$green: #98EF41
+// $orange: #FA7931
+$darkblue: #253238
+$lightgrey: #E6E6E6
+$darkerblue: #1A252B
+$lighterdarkblue: #3E545F
+
+$table-border-radius: 14px
+
+html, *
+	font-family: Montserrat, sans-serif
+body
+	display: flex
+	position: relative
+	overflow-y: hidden
+
+.container
+	display: flex
+.row
+	flex-direction: row
+.col
+	flex-direction: column
+
+.Sidebar
+	width: 380px
+	z-index: 10
+	color: $white
+	display: flex
+	min-height: 100vh
+	flex-direction: column
+	background-color: $darkblue
+	animation: transitionInRight 1s ease
+
+	@keyframes transitionInRight
+			0%
+				box-shadow: 1000px 0 0 1000px $darkblue
+			100%
+				box-shadow: 0 0 0 0 $darkblue
+
+
+	.logo
+		margin: 50px 50px 70px
+		animation: transitionInTop 1s ease
+
+	.button
+		color: $white
+		border: none
+		height: 60px
+		margin: 12px 50px
+		padding: 15px 10px 15px 65px
+		position: relative
+		font-size: 24px
+		text-align: left
+		font-weight: 500
+		border-radius: 15px
+		background-color: $orange
+		animation: transitionInTop 1s ease
+
+		&::before
+			top: 50%
+			left: 5%
+			width: 100px
+			height: 40px
+			content: ""
+			position: absolute
+			transform: translateY(-50%)
+			background-repeat: no-repeat
+
+		&.add::before
+			background-image: url(images/add.svg)
+			left: 6%
+		&.manage::before
+			background-image: url(images/cog.svg)
+
+	.logout
+		width: 280px
+		margin: auto 50px 50px
+		overflow: hidden
+		text-align: center
+		animation: transitionInFade 2s ease
+		font-weight: 700
+
+		@keyframes transitionInFade
+			0%
+				opacity: 0
+			80%
+				opacity: 0
+
+		.container
+			gap: 10px
+			width: 200%
+			display: flex
+			transition: .4s ease
+			margin-left: -280px
+
+
+		&-button
+			color: $white
+			text-decoration: none
+			border-radius: 19px
+			height: 50px
+			display: flex
+			align-items: center
+			justify-content: center
+
+			&.entry
+				width: 270px
+				font-size: 25px
+				font-weight: bold
+				position: relative
+				justify-content: left
+
+				&::after
+					top: 5px
+					right: -58px
+					width: 100px
+					height: 100px
+					content: ""
+					position: absolute
+					background-image: url(images/icon_frakcium.svg)
+					background-repeat: no-repeat
+
+			&.quit, &.return
+				font-size: 24px
+				font-weight: bold
+
+				width: 135px
+				background-color: $orange
+
+
+.Dashboard
+	width: 100%
+	display: flex
+	position: relative
+	align-items: center
+	justify-content: center
+	font-weight: 400
+
+	#clock
+		position: absolute
+		right: 50px
+		top: 50px
+		font-size: 36px
+		color: $grey
+		user-select: none
+		transition: .4s ease
+		animation: transitionInTop 2s ease
+
+	.decor
+		position: absolute
+		&:first-of-type
+			right: 0
+			bottom: 0
+			height: 40vh
+
+	& > .title
+		position: absolute
+		top: 50px
+		left: 50%
+		transform: translateX(-50%)
+		font-size: 36px
+		color: $lightgrey
+		user-select: none
+		transition: .4s ease
+		animation: transitionInTop 2s ease
+
+	.modal
+		opacity: 0
+		position: absolute
+		transition: .4s ease
+		background-color: $darkblue
+		border-radius: 20px
+		z-index: -10
+		padding: 40px 50px
+		gap: 10px
+		display: flex
+		flex-direction: column
+
+		& .title
+			font-size: 40px
+			color: $white
+			font-weight: bold
+			user-select: none
+
+		& .close-button
+			margin-left: auto
+			width: 55px
+			height: 55px
+			background-color: $orange
+			border-radius: 15px
+			border: none
+			background-image: url(images/cross.svg)
+			background-repeat: no-repeat
+			background-position: 50% 50%
+
+		& .button
+			min-height: 80px
+			background-color: $orange
+			border-radius: 15px
+			border: none
+			color: $white
+			font-size: 36px
+			font-weight: bold
+
+		& .list
+			gap: 13px
+			overflow-y: scroll
+			padding-right: 13px
+			&::-webkit-scrollbar
+		  		width: 13px
+			&::-webkit-scrollbar-track
+		  		background: $darkerblue
+			&::-webkit-scrollbar-thumb
+				background-color: $white
+				border-radius: 20px
+
+			& > .button
+				max-width: 100%
+				overflow: hidden
+				$white-space: nowrap
+				text-overflow: ellipsis
+
+		// &.new
+		// 	opacity: 1 //
+
+		& .form
+			position: absolute
+			z-index: 10
+			top: 100px
+			left: 50px
+			right: 50px
+			bottom: 40px
+			background: $darkblue
+			transition: .4s ease
+			flex-direction: column
+			padding-top: 40px
+			gap: 20px
+			display: none
+
+			.container
+				gap: 20px
+				width: fit-content
+
+				label
+					color: $white
+					font-size: 28px
+
+				.date
+					position: relative
+					#date::-webkit-calendar-picker-indicator
+						bcolor: $orange
+						width: 100%
+						height: 100%
+						top: 0
+						left: 0
+						right: 0
+						bottom: 0
+						position: absolute
+						transform: translateX(40px)
+						background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23FA7931" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>')
+						background-size: 40px 40px
+						background-position: 170px 60px
+
+				.select
+					height: 67px
+					width: 100%
+					border-radius: $table-border-radius
+					border: 4px solid $orange
+					background-color: $darkblue
+					padding: 10px 50px 10px 20px
+					font-size: 24px
+					color: $lighterdarkblue
+					-webkit-appearance: none
+					-mox-appearance: none
+					-ms-appearance: none
+  					appearance: none
+					display: flex
+					align-items: center
+
+					&-wrapper
+						position: relative
+						width: 100%
+						&::after
+							position: absolute
+							user-select: none
+							content: ""
+							right: 20px
+							width: 20px
+							height: 20px
+							top: 50%
+							transform: translateY(-50%)
+							pointer-events: none
+							background-image: url(images/arrow.svg)
+							background-repeat: no-repeat
+							background-position: center
+
+
+					option
+						border-radius: $table-border-radius
+						margin: 10px
+						padding: 10px
+
+					&.tour
+						width: 350px
+						user-select: none
+					.tour, .amount
+						position: relative
+						&-list
+							display: none
+							z-index: 10
+							top: calc(100% + 10px)
+							background-color: $darkblue
+							left: 0
+							width: 100%
+							position: absolute
+							flex-direction: column
+
+						&-option
+							margin-bottom: 10px
+							font-size: 24px
+							background-color: $darkblue
+							color: $white
+							border: 4px solid $orange
+							border-radius: $table-border-radius
+							padding: 15px
+
+
+
+
+			.button
+				margin-top: auto
+				width: 200px
+
+		.Table
+			color: $white
+			border-collapse: separate
+			position: relative
+			width: 100%
+
+			&-header
+				margin-top: 100px
+				color: $white
+				width: calc(100% + 20px)
+				background: $darkblue
+				gap: 25px
+
+			&-group
+				border-radius: $table-border-radius
+				margin-top: -80px
+				height: 77px
+				outline: $orange 4px solid
+				justify-content: space-around
+				align-items: center
+
+				&:first-of-type
+					width: 1065px
+				&:last-of-type
+					width: 245px
+
+				& > div
+					font-weight: 500
+					font-size: 32px
+					position: relative
+					width: 100%
+					text-align: center
+
+					// &:nth-last-of-type(1n+3)::after
+					&:not(:last-of-type)::after
+						content: "|"
+						position: absolute
+						right: 0
+						color: $orange
+				th.buttons
+					width: 250px
+
+			tbody
+				border-spacing: 0 15px
+				// gap: 20px
+				// display: flex
+				// flex-direction: column
+				max-height: 100%
+				width: calc(100% + 20px)
+				display: block
+				overflow-y: scroll
+				max-height: 650px
+				padding: 0 10px 0 0
+				&::-webkit-scrollbar
+					width: 13px
+				&::-webkit-scrollbar-track
+					background: $darkerblue
+				&::-webkit-scrollbar-thumb
+					background-color: $white
+					border-radius: 20px
+
+				tr
+					// border-radius: 20px
+					height: 77px
+					// display: flex
+					// justify-content: space-around
+
+					td
+
+						max-width: 100%
+						text-align: center
+						vertical-align: middle
+						font-weight: 700
+						font-size: 32px
+						line-height: 39px
+
+						&:not(:last-of-type)
+							background-color: $orange
+							width: 25%
+
+						&.name, &.tour
+							max-width: 150px
+							overflow: hidden
+							$white-space: nowrap
+							text-overflow: ellipsis
+
+						&:first-of-type
+							border-radius: $table-border-radius 0 0 $table-border-radius
+						&:nth-last-of-type(2)
+							border-radius: 0 $table-border-radius $table-border-radius 0
+
+
+
+						&.active
+							color: $green
+						&.ended
+							color: $red
+
+						.table-button
+							border-radius: $table-border-radius
+							background-color: $orange
+							height: 77px
+							width: 77px
+							margin-left: 10px
+							cursor: pointer
+							background-repeat: no-repeat
+							background-position: center
+
+							&:first-of-type
+								margin-left: 20px
+
+							&.delete
+								background-image: url(images/cross.svg)
+							&.edit
+								background-image: url(images/pen.svg)
+							&.copy
+								background-image: url(images/copy.png)
+
+
+
+
+
+		&.new
+			width: 620px
+			height: 700px
+		&.manage
+			width: 1440px
+			height: 900px
+
+.loader
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 100px
+	z-index: 10
+	align-items: center
+	justify-content: center
+
+	&-text
+		color: $white
+		background-color: $orange
+		font-size: 40px
+		font-weight: bold
+		padding: 20px 40px
+		border-radius: 20px
+
+
+
+.Login
+	justify-content: center
+	min-height: 100vh
+	min-width: 100%
+	background-color: $darkblue
+	display: flex
+
+	.decor
+		position: absolute
+		&:first-of-type
+			bottom: 0
+			left: 0
+			animation: transitionInBot 1s $bounce
+		&:last-of-type
+			right: 0
+			transform: rotate(180deg)
+			animation: transitionInTop 1s $bounce
+
+	@keyframes transitionInTop
+		0%
+			margin-top: -1000px
+	@keyframes transitionInBot
+		0%
+			margin-bottom: -1000px
+
+	&-container
+		margin: 15vh auto auto
+		display: flex
+		flex-direction: column
+		align-items: center
+		animation: transitionInTop .6s $bounce
+
+	&-form
+		display: flex
+		flex-direction: column
+		gap: 10px
+		position: relative
+		z-index: 10
+
+		.wrapper
+			position: relative
+
+		.show-pass-btn
+			background-image: url(images/eye.svg)
+			background-repeat: no-repeat
+			height: 40px
+			width: 40px
+			position: absolute
+			top: 50%
+			transform: translateY(-40%)
+			border:
+			right: 30px
+
+
+		input
+			border: none
+			width: 500px
+			height: 80px
+			border-radius: 18px
+			font-size: 32px
+			font-weight: 300
+			padding: 10px 20px
+
+			&[type=submit]
+				background: $orange
+				color: $white
+				font-weight: 700
+				font-size: 40px
+
+	.logo
+		width: 630px
+		margin-bottom: 85px
+
+.tour-option:hover,
+.amount-option:hover,
+.logout-button:hover,
+.modal .button:hover,
+.submit > input:hover,
+.Sidebar > .button:hover,
+.modal .close-button:hover,
+.delete-prompt-button:hover,
+.password > .show-pass-btn:hover,
+	opacity: .8
+	cursor: pointer
+
+img
+	user-select: none
+
+.delete-prompt
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	width: 350px
+	height: 200px
+	margin: auto
+	padding: 20px !important
+	display: flex
+	position: absolute
+	border-radius: 20px
+	flex-direction: column
+	background-color: $darkblue
+
+	&-text
+		color: $white
+		font-size: 28px
+		padding: 10px
+		height: 100%
+
+	&-button
+		background-color: $orange
+		color: $white
+		border: none
+		margin: auto
+		padding: 10px 25px
+		border-radius: 10px
+		font-size: 22px
+		transition: .2s
+		&.confirm-delete:hover
+			background-color: $red
+			opacity: 1
+

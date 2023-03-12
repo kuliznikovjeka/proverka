@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+		integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<script src="./script.js" defer></script>
+	<!script src="/js/engine.js"></script-->
+</head>
+
+<body>
+	<aside class="asied">
+		<button type="button" class="icon-menu"><span></span></button>
+		<div class="Sidebar menu-body">
+			<div class="menu-body__list">
+				<img src="./images/logo_frakcium.svg" alt="logo_frakcium" class="logo">
+				<div class="buttons-side">
+					<button class="button add">Добавить сетку</button>
+					<button class="button manage">Управление</button>
+				</div>
+				<div class="logout">
+					<div class="container">
+						<a href="#" class="logout-button quit ajax-link" data-url="/admin/?logout">Выйти</a>
+						<div class="logout-button return">Назад</div>
+						<div class="logout-button entry">Администратор</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</aside>
+	<main class="Dashboard">
+		<div id="clock"></div>
+		<img class="decor" src="./images/decor_2.svg" alt="">
+		<div class="title">Рабочий стол</div>
+		<div class="modal new">
+			<div class="container row flex-table">
+				<h1 class="title">Создать таблицу</h1>
+				<button onclick="closeModal('new')" class="close-button"></button>
+			</div>
+			<div class="list container col">
+
+				<button class="button ajax-link" data-url="/admin/?action=form&id=1"
+					onclick="$('.modal > .form').css('display', 'flex');">Игра 1</button>
+				<button class="button ajax-link" data-url="/admin/?action=form&id=1">Игра 2</button>
+				<button class="button ajax-link" data-url="/admin/?action=form&id=1">Игра 3</button>
+
+			</div>
+			<form id="form_create" class="form" action=""><input id="form_create_games" type="hidden" name="game"
+					value="1">
+				<div class="container row">
+					<div class="container col"> <label for="tour">Вид турнира</label> <input id="form_create_type"
+							type="hidden" name="type" value="0">
+						<div class="container select-wrapper">
+							<div class="select tour" value="0">
+								<div class="text">Выберите...</div>
+								<div class="tour-list">
+									<div value="1" class="tour-option">Single elimination</div>
+									<div value="2" class="tour-option">Double elimination</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container col"> <label for="amount">Кол-во</label> <input id="form_create_count"
+							type="hidden" name="count" value="8">
+						<div class="container select-wrapper">
+							<div class="select amount" value="8">
+								<div class="text">8</div>
+								<div class="amount-list">
+									<div value="8" class="amount-option">8</div>
+									<div value="16" class="amount-option">16</div>
+									<div value="32" class="amount-option">32</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container row">
+					<div class="container col date"> <label for="date">Дата</label>
+						<div class="container"> <input class="select" type="date" name="data" id="date"> </div>
+					</div>
+				</div>
+				<div class="container row">
+					<div class="container col date"> <label for="name">Название турнира</label>
+						<div class="container"> <input class="select" type="text" name="name" id="name"> </div>
+					</div>
+				</div>
+				<div class="container row">
+					<div class="container col date"> <label for="url">URL адрес</label>
+						<div class="container"> <input class="select" type="text" name="url" id="url"> </div>
+					</div>
+				</div> <input type="radio" name="" id=""> <button class="button ajax-link" data-url="/admin/?action=new"
+					data-form="#form_create">Создать</button>
+			</form>
+		</div>
+		<div class="modal manage">
+			<div class="container row container-custom-head">
+				<h1 class="title">Управление сетками</h1>
+				<button onclick="closeModal('manage')" class="close-button"></button>
+			</div>
+			<div class="Table-header container row">
+				<div class="Table-group container row">
+					<div class="Table-group__column">
+						<div class="status">Статус</div>
+					</div>
+					<div class="Table-group__column">
+						<div class="name">Игра</div>
+					</div>
+					<div class="Table-group__column">
+						<div class="date">Дата</div>
+					</div>
+					<div class="Table-group__column">
+						<div class="tour">Турнир</div>
+					</div>
+				</div>
+				<div class="Table-group container row">
+					<div class="buttons">Управление</div>
+				</div>
+			</div>
+			<table class="Table">
+				<tbody id="list_tour">
+					<tr id="tour_1" idx="1">
+						<td class="active">Активен</td>
+						<td class="name">TEST 1</td>
+						<td>12.03.2023</td>
+						<td class="tour">A TEST</td>
+						<td class="container row">
+							<div class="table-button delete"></div>
+							<div class="table-button edit"></div>
+							<div class="table-button copy"><input id="url_1"
+									style="position: absolute; left: -1000px; top: -1000px;" type="text" value="https://test.ru">
+							</div>
+						</td>
+					</tr>
+					<tr id="tour_2" idx="2">
+						<td class="active">Активен</td>
+						<td class="name">TEST 2</td>
+						<td>12.03.2024</td>
+						<td class="tour">D TEST</td>
+						<td class="container row">
+							<div class="table-button delete"></div>
+							<div class="table-button edit"></div>
+							<div class="table-button copy"><input id="url_2"
+									style="position: absolute; left: -1000px; top: -1000px;" type="text" value="https://test.ru">
+							</div>
+						</td>
+					</tr>
+					<tr id="tour_3" idx="3">
+						<td class="ended">Завершен</td>
+						<td class="name">A TEST</td>
+						<td>15.03.2022</td>
+						<td class="tour">TEST TEST 3</td>
+						<td class="container row">
+							<div class="table-button delete"></div>
+							<div class="table-button edit"></div>
+							<div class="table-button copy"><input id="url_3"
+									style="position: absolute; left: -1000px; top: -1000px;" type="text" value="https://test.ru">
+							</div>
+						</td>
+					</tr>
+					<tr id="tour_4" idx="4">
+						<td class="active">Активен</td>
+						<td class="name">A TEST</td>
+						<td>18.05.2023</td>
+						<td class="tour">TEST TEST 4</td>
+						<td class="container row">
+							<div class="table-button delete"></div>
+							<div class="table-button edit"></div>
+							<div class="table-button copy"><input id="url_4"
+									style="position: absolute; left: -1000px; top: -1000px;" type="text" value="https://test.ru">
+							</div>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+		<div class="modal delete-prompt">
+			<div class="delete-prompt-text"></div>
+			<div class="container row">
+				<button class="delete-prompt-button confirm-delete" idx="1"
+					onclick="deleteRow($(this).attr('idx'))">Удалить</button>
+				<button class="delete-prompt-button cancel" onclick="closeModal('delete-prompt')">Отмена</button>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>
