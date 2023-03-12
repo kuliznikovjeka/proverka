@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="/js/engine.js"></script>
+  <title>Турнирная сетка</title>
+ </head>
+ <body>
+  <main>
+   <header>
+    <img src="images/frakcium.svg" alt="frakcium logo">
+    <img src="images/starcraft.svg" alt="starcraft logo">
+    <div id="save" class="ajax-link" data-form="#form_edit">сохранить</div>    
+   </header>
+   <div class="tournament">
+    <!--четвертьфинал-->   
+    <div class="act">
+     <h2 class="title">quarterfinals</h2>
+     <div class="round">
+      <div class="team row">
+       <div class="select">
+	<div class="select_header">
+	 <span class="select_current"></span>
+	</div>
+	<div class="select_body">
+	 <div class="select_item" idnum="1" idform="form_edit_quarterfinals_1_1"><img src="images/maru.svg" alt=""></div>
+	 <div class="select_item" idnum="2" idform="form_edit_quarterfinals_1_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_quarterfinals_1_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_quarterfinals_1_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_quarterfinals_2_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_quarterfinals_2_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_quarterfinals_2_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_quarterfinals_2_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="round-connector"></div>
+      <div class="round-connector"></div>
+      <div class="bo"><input idform="form_edit_quarterfinals_1_name" type="text" oninput="changeInput(this);" value=""></div>
+     </div>
+     <div class="round">
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_quarterfinals_3_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_quarterfinals_3_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_quarterfinals_3_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_quarterfinals_3_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_quarterfinals_4_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_quarterfinals_4_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_quarterfinals_4_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_quarterfinals_4_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="round-connector"></div>
+      <div class="round-connector"></div>
+      <div class="bo"><input idform="form_edit_quarterfinals_2_name" type="text" oninput="changeInput(this);" value=""></div>
+     </div>
+     <div class="round active">
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_quarterfinals_5_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_quarterfinals_5_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_quarterfinals_5_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_quarterfinals_5_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_quarterfinals_6_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_quarterfinals_6_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_quarterfinals_6_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_quarterfinals_6_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="round-connector"></div>
+      <div class="round-connector"></div>
+      <div class="bo"><input idform="form_edit_quarterfinals_3_name" type="text" oninput="changeInput(this);" value=""></div>
+     </div>
+     <div class="round">
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_quarterfinals_7_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_quarterfinals_7_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_quarterfinals_7_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_quarterfinals_7_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_quarterfinals_8_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_quarterfinals_8_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_quarterfinals_8_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_quarterfinals_8_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="round-connector"></div>
+      <div class="round-connector"></div>
+      <div class="bo"><input idform="form_edit_quarterfinals_4_name" type="text" oninput="changeInput(this);" value=""></div>
+     </div>
+    </div>
+    <!--полуфинал-->   
+    <div class="act">
+     <h2 class="title">semifinals</h2>
+     <div class="round">
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_semifinals_1_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_semifinals_1_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_semifinals_1_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_semifinals_1_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_semifinals_2_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_semifinals_2_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_semifinals_2_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_semifinals_2_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="round-connector"></div>
+      <div class="round-connector"></div>
+      <div class="bo"><input idform="form_edit_semifinals_1_name" type="text" oninput="changeInput(this);" value=""></div>
+     </div>
+     <div class="round">
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_semifinals_3_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_semifinals_3_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_semifinals_3_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_semifinals_3_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_semifinals_4_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_semifinals_4_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_semifinals_4_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_semifinals_4_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="round-connector"></div>
+      <div class="round-connector"></div>
+      <div class="bo"><input idform="form_edit_semifinals_2_name" type="text" oninput="changeInput(this);" value=""></div>
+     </div>
+    </div>
+    <!--финал-->
+    <div class="act">
+     <h2 class="title">finals</h2>
+     <div class="round">
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_finals_1_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_finals_1_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_finals_1_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_finals_1_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="team row">
+       <div class="select">
+        <div class="select_header">
+         <span class="select_current"></span>
+        </div>
+        <div class="select_body">
+         <div class="select_item" idnum="1" idform="form_edit_finals_2_1"><img src="images/maru.svg" alt=""></div>
+         <div class="select_item" idnum="2" idform="form_edit_finals_2_1"><img src="images/rogue.svg" alt=""></div>
+         <div class="select_item" idnum="3" idform="form_edit_finals_2_1"><img src="images/serral.svg" alt=""></div>
+        </div>
+       </div>
+       <div class="team-name"><input idform="form_edit_finals_2_2" type="text" oninput="changeInput(this);" value=""></div>
+      </div>
+      <div class="round-connector"></div>
+      <div class="round-connector"></div>
+      <div class="bo"><input idform="form_edit_finals_name" type="text" oninput="changeInput(this);" value=""></div>
+     </div>
+     <!--за третье место-->
+     <section class="third-place">
+      <div class="act">
+       <h2 class="title">3rd place</h2>
+       <div class="round">
+        <div class="team row">
+         <div class="select">
+          <div class="select_header">
+           <span class="select_current"></span>
+          </div>
+          <div class="select_body">
+           <div class="select_item" idnum="1" idform="form_edit_rdplace_1_1"><img src="images/maru.svg" alt=""></div>
+           <div class="select_item" idnum="2" idform="form_edit_rdplace_1_1"><img src="images/rogue.svg" alt=""></div>
+           <div class="select_item" idnum="3" idform="form_edit_rdplace_1_1"><img src="images/serral.svg" alt=""></div>
+          </div>
+         </div>
+         <div class="team-name"><input idform="form_edit_rdplace_1_2" type="text" oninput="changeInput(this);" value=""></div>
+        </div>
+        <div class="team row">
+         <div class="select">
+          <div class="select_header">
+           <span class="select_current"><?php echo !empty($result['rdplace_2_1']) ? $arr_img[$result['rdplace_2_1']] : ''; ?></span>
+          </div>
+          <div class="select_body">
+           <div class="select_item" idnum="1" idform="form_edit_rdplace_2_1"><img src="images/maru.svg" alt=""></div>
+           <div class="select_item" idnum="2" idform="form_edit_rdplace_2_1"><img src="images/rogue.svg" alt=""></div>
+           <div class="select_item" idnum="3" idform="form_edit_rdplace_2_1"><img src="images/serral.svg" alt=""></div>
+          </div>
+         </div>
+         <div class="team-name"><input idform="form_edit_rdplace_2_2" type="text" oninput="changeInput(this);" value=""></div>
+         <div class="bo"><input idform="form_edit_rdplace_name" type="text" oninput="changeInput(this);" value=""></div>
+        </div>
+       </div>
+       <span class="line"></span>
+       <div class="round">
+        <div class="team row">
+         <div class="select">
+          <div class="select_header">
+           <span class="select_current"></span>
+          </div>
+          <div class="select_body">
+           <div class="select_item" idnum="1" idform="form_edit_rdplace_1"><img src="images/maru.svg" alt=""></div>
+           <div class="select_item" idnum="2" idform="form_edit_rdplace_1"><img src="images/rogue.svg" alt=""></div>
+           <div class="select_item" idnum="3" idform="form_edit_rdplace_1"><img src="images/serral.svg" alt=""></div>
+          </div>
+         </div>
+         <div class="team-name"><input idform="form_edit_rdplace_2" type="text" oninput="changeInput(this);" value=""></div>									
+        </div>
+       </div>
+      </div>
+     </section>
+     
+    </div>
+    <!--победитель-->
+    <section class="winner">
+     <div class="title">winner</div>
+     <h2><input type="text" idform="form_edit_winner" oninput="changeInput(this);" value=""></h2>
+    </section>
+   </div>
+  </main>
+     
+  <aside class="sidebar container col">
+   <div id="selected-li"></div>
+   <h1 class="tournament_title"><br><input type="text" idform="form_edit_name" id="tournament_input" value="" oninput="changeInput(this);"></h1>
+   <hr>
+   <div class="sponsors">
+    <form id="form_edit" enctype="multipart/form-data">
+     
+    <input id="form_edit_name" type="hidden" name="name" value="">    
+        
+    <input id="form_edit_quarterfinals_1_1" type="hidden" name="quarterfinals_1_1" value="">  
+    <input id="form_edit_quarterfinals_1_2" type="hidden" name="quarterfinals_1_2" value=""> 
+    <input id="form_edit_quarterfinals_2_1" type="hidden" name="quarterfinals_2_1" value=""> 
+    <input id="form_edit_quarterfinals_2_2" type="hidden" name="quarterfinals_2_2" value="">
+    
+    <input id="form_edit_quarterfinals_1_name" type="hidden" name="quarterfinals_1_name" value="">
+    
+    <input id="form_edit_quarterfinals_3_1" type="hidden" name="quarterfinals_3_1" value="">
+    <input id="form_edit_quarterfinals_3_2" type="hidden" name="quarterfinals_3_2" value="">
+    <input id="form_edit_quarterfinals_4_1" type="hidden" name="quarterfinals_4_1" value="">
+    <input id="form_edit_quarterfinals_4_2" type="hidden" name="quarterfinals_4_2" value="">
+    
+    <input id="form_edit_quarterfinals_2_name" type="hidden" name="quarterfinals_2_name" value="">
+    
+    <input id="form_edit_quarterfinals_5_1" type="hidden" name="quarterfinals_5_1" value="">
+    <input id="form_edit_quarterfinals_5_2" type="hidden" name="quarterfinals_5_2" value="">
+    <input id="form_edit_quarterfinals_6_1" type="hidden" name="quarterfinals_6_1" value="">
+    <input id="form_edit_quarterfinals_6_2" type="hidden" name="quarterfinals_6_2" value="">
+    
+    <input id="form_edit_quarterfinals_3_name" type="hidden" name="quarterfinals_3_name" value="">
+    
+    <input id="form_edit_quarterfinals_7_1" type="hidden" name="quarterfinals_7_1" value="">
+    <input id="form_edit_quarterfinals_7_2" type="hidden" name="quarterfinals_7_2" value="">
+    <input id="form_edit_quarterfinals_8_1" type="hidden" name="quarterfinals_8_1" value="">
+    <input id="form_edit_quarterfinals_8_2" type="hidden" name="quarterfinals_8_2" value="">
+    
+    <input id="form_edit_quarterfinals_4_name" type="hidden" name="quarterfinals_4_name" value="">
+    
+    <input id="form_edit_semifinals_1_1" type="hidden" name="semifinals_1_1" value="">
+    <input id="form_edit_semifinals_1_2" type="hidden" name="semifinals_1_2" value="">
+    <input id="form_edit_semifinals_2_1" type="hidden" name="semifinals_2_1" value="">
+    <input id="form_edit_semifinals_2_2" type="hidden" name="semifinals_2_2" value="">
+    
+    <input id="form_edit_semifinals_1_name" type="hidden" name="semifinals_1_name" value="">
+    
+    <input id="form_edit_semifinals_3_1" type="hidden" name="semifinals_3_1" value="">
+    <input id="form_edit_semifinals_3_2" type="hidden" name="semifinals_3_2" value="">
+    <input id="form_edit_semifinals_4_1" type="hidden" name="semifinals_4_1" value="">
+    <input id="form_edit_semifinals_4_2" type="hidden" name="semifinals_4_2" value="">
+    
+    <input id="form_edit_semifinals_2_name" type="hidden" name="semifinals_2_name" value="">
+    
+    <input id="form_edit_finals_1_1" type="hidden" name="finals_1_1" value="">
+    <input id="form_edit_finals_1_2" type="hidden" name="finals_1_2" value="">
+    <input id="form_edit_finals_2_1" type="hidden" name="finals_2_1" value="">
+    <input id="form_edit_finals_2_2" type="hidden" name="finals_2_2" value="">
+    
+    <input id="form_edit_finals_name" type="hidden" name="finals_name" value="">
+    
+    <input id="form_edit_rdplace_1_1" type="hidden" name="rdplace_1_1" value="">
+    <input id="form_edit_rdplace_1_2" type="hidden" name="rdplace_1_2" value="">
+    <input id="form_edit_rdplace_2_1" type="hidden" name="rdplace_2_1" value="">
+    <input id="form_edit_rdplace_2_2" type="hidden" name="rdplace_2_2" value="">
+    
+    <input id="form_edit_rdplace_name" type="hidden" name="rdplace_name" value="">
+    
+    <input id="form_edit_winner" type="hidden" name="winner" value="">
+    
+    <input id="form_edit_rdplace_1" type="hidden" name="rdplace_1" value="">
+    <input id="form_edit_rdplace_2" type="hidden" name="rdplace_2" value="">
+    <p>our sponsors</p>
+    <div class="banner col">
+     <div id="info_add">Добавьте баннер</div>
+     <input type="file" name="upload1" onchange="download(this)">
+     
+    </div>
+    <div class="banner col">
+     <div id="info_add">Добавьте баннер</div>
+     <input type="file" name="upload2" onchange="download(this)">
+     
+    </div>
+    <div class="banner col" >
+     <div id="info_add">Добавьте баннер</div>
+     <input type="file" name="upload3" onchange="download(this)">
+     
+    </div>
+    </form> 
+   </div>
+   
+   <div class="socials">
+    <p>watch live on:</p>
+    <div class="container row">
+     <a href="https://facebook.com"><img src="images/facebook.svg" alt="intel logo"></a>
+     <a href="https://twitch.tv"><img src="images/twitch.svg" alt="intel logo"></a>
+     <a href="https://twitter.com"><img src="images/twitter.svg" alt="intel logo"></a>
+    </div>
+   </div>
+  </aside>
+ </body>
+</html>
+
+<script>
+	let observer = new MutationObserver((mutations) => {
+		mutations.forEach((mutation) => {
+			let oldValue = mutation.oldValue;
+			let newValue = mutation.target.textContent;
+			if (oldValue !== newValue) {
+				document.querySelectorAll('.team-name').forEach(name => {
+					len = name.innerHTML.length
+					return name.setAttribute(`style`,`font-size:${40-len*1.3}px`)
+				})
+				const winner = document.querySelector('.winner > h2')
+				len = winner.innerHTML.length
+				winner.setAttribute(`style`,`font-size:${64-len*1.8}px`)
+			}
+		});
+	});
+
+	observer.observe(document.body, {
+		characterDataOldValue: true, 
+		subtree: true, 
+		childList: true, 
+		characterData: true
+	});
+
+		
+	
+	
+
+	let banner = document.querySelectorAll('.banner')
+	let info_add = document.querySelectorAll('.banner #info_add')
+
+
+	function download(input){
+		let file = input.files[0]
+		let reader = new FileReader()
+		reader.readAsDataURL(file)
+		
+			banner.forEach(item =>{
+				item.addEventListener('change', (e)=>{
+					if(e.target){
+						reader.onload = function (){
+							let img = document.createElement('img')
+							item.appendChild(img)
+							img.src = reader.result
+							item.style.border = 'none'
+							item.style.fontSize = '0'
+						}
+					}
+				})
+			})
+	}
+
+
+
+	let tournamentInput = document.querySelector('#tournament_input')
+	let tournamentName = document.querySelector('.tournament_title')
+	tournamentInput.addEventListener('keypress', (e)=>{
+		if(e.key == 'Enter'){
+			tournamentName.addEventListener('change', ()=>{
+				tournamentName.textContent = tournamentInput.value                               
+			})
+		}
+	})
+
+	
+	let select = function(){
+    let selectHeader = document.querySelectorAll('.select_header')
+    let selectItem = document.querySelectorAll('.select_item')
+
+
+    selectHeader.forEach(item => {
+        item.addEventListener('click', selectToggle)
+    })
+            
+    selectItem.forEach(item => {
+        item.addEventListener('click', selectChoose)
+    })
+
+    function selectToggle(){
+        this.parentElement.classList.toggle('is-active')
+    }
+
+    function selectChoose(){
+        let img = this        
+        let select = this.closest('.select')
+        let cuurentImg = this.closest('.select').querySelector('.select_current')
+        cuurentImg.innerHTML = img.innerHTML
+        select.classList.remove('is-active')
+        
+        document.querySelector("#"+img.getAttribute('idform')).value = img.getAttribute('idnum');
+    }
+}
+select()
+
+function changeInput(elem)
+{
+  document.querySelector("#"+elem.getAttribute('idform')).value = elem.value;
+}
+
+</script>
+	 
