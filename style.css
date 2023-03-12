@@ -379,7 +379,7 @@ body {
 }
 @media (max-width: 768px) {
 	.Sidebar .logout {
-		margin-bottom: 30%;
+		margin-bottom: 20%;
 	}
 }
 
@@ -445,7 +445,7 @@ body {
 }
 @media (max-width: 768px) {
 	.Sidebar .logout-button.entry {
-		margin: auto;
+		margin: 0 50px;
 	}
 }
 
